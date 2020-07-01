@@ -1,0 +1,91 @@
+// Tipografia
+$type-1: 'Nunito', Helvetica, Arial, sans-serif;
+$type-2: 'Muli', sans-serif;
+
+// Cores
+$verde: #29CA8E;
+$azul: #3F51B5;
+$branco: #fff;
+$cinza-1: #F9F9F9;
+$cinza-2: #F0F0F0;
+$cinza-3: #BEBEBE;
+$cinza-4: #757575;
+$cinza-5: #454545;
+$cinza-6: #353535;
+$cinza-7: #252020;
+$cinza-8: #F0F0F0;
+
+// Grid
+$xl-container: 1170px;
+$l-container: 970px;
+$m-container: 750px;
+$gutter: 30px;
+$gutterH: $gutter / 2;
+
+// Breakpoints
+$m-device: 768px;
+$l-device: 992px;
+$xl-device: 1200px;
+
+// Responsivo
+@mixin d($size) {
+  @if $size == x {
+    @media screen and (min-width: $xl-device) {
+      @content;
+    }
+  }
+  @else if $size == l {
+    @media screen and (min-width: $l-device) {
+      @content;
+    }
+  }
+  @else if $size == m {
+    @media screen and (max-width: $l-device - 1) {
+      @content;
+    }
+  } @else if $size == s {
+    @media screen and (max-width: $m-device - 1) {
+      @content;
+    }
+  }
+}
+
+// Pixel to EM
+@function em($font-size, $context: 16) {
+  @return ($font-size / $context) + em;
+}
+
+// Section
+@mixin section {
+  padding: 100px 0;
+  @include d(m) {
+    padding: 70px 0;
+  }
+}
+
+// Redes Sociais
+@mixin redes {
+  @include flexbox(false);
+
+  a {
+    $circle-size: 35px;
+    color: $cinza-7;
+    width: $circle-size;
+    height: $circle-size;
+    line-height: $circle-size;
+    border-radius: 50%;
+    text-align: center;
+    display: block;
+    margin-right: 10px;
+    transition: .3s ease-in-out;
+    &:hover {
+      background: $verde;
+      color: $branco;
+    }
+  }
+
+  i {
+    font-size: em(15);
+    line-height: em(15, 15);
+  }
+}

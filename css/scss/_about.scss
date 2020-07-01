@@ -1,0 +1,122 @@
+.about {
+  @include section;
+}
+
+.about .container {
+  @include d(m) {
+    @include flex-direction(column);
+    @include align-items(center);
+  }
+}
+
+.about-info {
+  flex: 1;
+
+  h2 {
+    margin-bottom: 50px;
+  }
+}
+
+.about-item {
+  @include flexbox;
+  @include align-items(center);
+  margin-bottom: 40px;
+}
+
+.about-icon i {
+  $circle-size: 50px;
+  width: $circle-size;
+  height: $circle-size;
+  line-height: $circle-size;
+  background: $verde;
+  border-radius: 50%;
+  font-size: em(25);
+  color: $branco;
+  text-align: center;
+}
+
+.sign-up {
+  // Aspect Ratio responsivo
+  @include align-self(center);
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  &:before {
+    content: "";
+    float: left;
+    padding-top: 100%;
+  }
+  
+  // Configurações restantes
+  background: $cinza-7;
+  border-radius: 50%;
+  flex: 1;
+  @include flexbox;
+  @include justify-content(center);
+  @include align-items(center);
+  
+  @include d(l) {
+    margin-left: 120px;
+  }
+
+  @include d(m) {
+    margin-top: 30px;
+  }
+
+  @include d(s) {
+    max-width: 300px;
+  }
+
+  .holder {
+    flex: 1;
+    padding: 0 20px;
+  }
+
+  h2 {
+    text-align: center;
+    color: $branco;
+    @include d(s) {
+      margin-top: 15px;
+    }
+  }
+
+  label {
+    display: none;
+  }
+
+  form{
+    @include flexbox;
+    @include flex-direction(column);
+    margin-top: 30px;
+
+    @include d(s) {
+      margin-top: 10px;
+    }
+
+    input {
+      padding: 10px;
+      border-bottom: 1px solid #555;
+      color: $cinza-1;
+      font-size: em(14);
+      line-height: em(20,14);
+      margin-bottom: 10px;
+      @include d(s) {
+        margin-bottom: 5px;
+      }
+    }
+
+    button {
+      @include align-self(center);
+      margin-top: 20px;
+        @include d(s) {
+          margin-top: 5px;
+        }
+    }
+  }
+
+  .btn {
+    &:hover {
+      border: 1px solid $azul;
+    }
+  }
+}

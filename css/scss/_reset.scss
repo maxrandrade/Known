@@ -1,0 +1,23 @@
+* { box-sizing: border-box; }
+body, a, ul, li, h1, h2, h3, h4, p, form, label, input, button, textarea {
+  margin: 0;
+  padding: 0;}
+
+li { list-style: none; }
+
+img {
+  display: block;
+  max-width: 100%;}
+
+button, input, textarea {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+a { text-decoration: none; }
+  

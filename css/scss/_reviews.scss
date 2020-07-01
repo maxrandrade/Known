@@ -1,0 +1,79 @@
+.reviews {
+  @include section;
+  background: $cinza-1;
+
+  > h2, > p {
+    text-align: center;
+  }
+}
+
+.reviews-list {
+  @include flex-wrap(wrap);
+  margin-top: 70px;
+}
+
+.review-item {
+  @include flex(1 1 290px);
+  background: $branco;
+  padding: 55px 40px;
+  @include d(m) {
+    margin-top: $gutter;
+  }
+}
+
+.review-author {
+  margin-bottom: 25px;
+  @include flexbox(false);
+  @include align-items(center);
+  @include flex-wrap(wrap);
+}
+
+.author-img img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.author-name {
+  h3 {
+    font-size: em(18);
+    line-height: em(25, 18);
+    color: $cinza-7;
+  }
+  span {
+    font-size: em(14);
+    line-height: em(20, 14);
+    color: #808080;
+  }
+}
+
+.review-text {
+  font-size: em(16);
+  line-height: em(26, 16);
+  margin-bottom: 20px;
+}
+
+.review-rating {
+  font-size: em(14);
+  line-height: em(14, 14);
+  color: $azul;
+}
+
+.reviews-slide-btn {
+  text-align: center;
+  margin-top: 35px;
+  $active-btn: #869791;
+  button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #D6D6D6;
+    margin: 0 5px;
+    overflow: hidden;
+    text-indent: -999px;
+    &:hover, &.active {
+      background: $active-btn;
+    }
+  }
+}

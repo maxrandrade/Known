@@ -1,0 +1,105 @@
+// Flexbox
+.container {
+  @include flexbox();
+  max-width: $l-container;
+  margin: 0 auto;
+  @include d(x) {
+    max-width: $xl-container;
+  }
+  @include d(m) {
+    max-width: $m-container;
+  }
+  @include d(s) {
+    width: 100%;
+  }
+}
+
+.row {
+  margin-left: - ($gutterH);
+  margin-right: - ($gutterH);
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #000;
+}
+
+// Tipografia
+body {
+  font-family: $type-1;
+}
+
+button, input, textarea {
+  font-family: $type-1;
+}
+
+h1, h2, h3 { 
+  font-family: $type-2;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: em(42);
+}
+
+h2 {
+  font-size: em(28);
+  line-height: em(40, 28);
+  color: $cinza-6;
+}
+
+h3 {
+  font-size: em(21);
+  line-height: em(30, 21);
+  color: $cinza-5;
+}
+
+h4 {
+  font-family: $type-1;
+  font-weight: bold;
+  font-size: em(14);
+  color: $cinza-6;
+}
+
+p {
+  color: $cinza-4;
+  font-weight: 400;
+  font-size: em(14);
+  line-height: em(24, 14);
+}
+
+p.sub-heading {
+  font-family: $type-2;
+  font-size: em(18);
+  line-height: em(18, 18);
+  font-weight: 300;
+}
+
+// Estilos
+.btn {
+  font-size: em(14);
+  padding: 15px 30px;
+  border: 1px solid $branco;
+  outline: none;
+  border-radius: 50px;
+  transition: .3s;
+  &.btn-a{
+    color: $branco;
+    &:hover {
+      background: $cinza-1;
+      color: $cinza-6;
+    }
+  }
+  &.btn-b{
+    background: $branco;
+    color: $cinza-6;
+    &:hover {
+      background: $azul;
+      color: $branco;
+    }
+  }
+}
+

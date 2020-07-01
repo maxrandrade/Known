@@ -1,0 +1,36 @@
+.teachers {
+  @include section;
+  background: $cinza-1;
+
+  > h2, > p {
+    text-align: center;
+  }
+}
+
+.teachers-list {
+  @include flex-wrap(wrap);
+}
+
+.teacher-card {
+  margin-top: 50px;
+  background: $branco;
+  @include flex(1);
+  @include d(m) {
+    @include flex-basis(calc(50% - #{$gutter}));
+  }
+  @include d(s) {
+    @include flex-basis(225px);
+  }
+
+  .redes {
+    padding: 20px;
+    border-top: 1px solid $cinza-2;
+    @include redes;
+  }
+}
+
+.teacher-info {
+  padding: 18px 30px;
+}
+
+

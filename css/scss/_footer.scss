@@ -1,0 +1,90 @@
+.footer {
+  @include section;
+  background: $cinza-7;
+
+  .container {
+    @include flex-wrap(wrap);
+  }
+
+  h3 {
+    color: $branco;
+    font-size: em(20);
+    margin-bottom: 15px;
+  }
+
+  p, a {
+    color: #909090;
+    font-size: em(14);
+  }
+
+  .redes {
+    @include redes;
+    margin-bottom: 10px;
+    a {
+      color: $verde;
+    }
+  }
+}
+
+.footer-section {
+  @include flex(1);
+  @include d(m) {
+    @include flex(1 1 calc(50% - #{$gutter}));
+  }
+  @include d(s) {
+    @include flex(1 1 250px);
+  }
+}
+
+.footer-section_sub {
+  margin-bottom: 50px;
+}
+
+.copyright {
+  margin-bottom: 10px;
+}
+
+.footer-nav {
+  li {
+    display: inline-block;
+    line-height: em(30, 14);
+    margin-right: 13px;
+  }
+  a {
+    transition: .3s;
+    &:hover {
+      color: $verde;
+    }
+  }
+}
+
+.newsletter {
+  label {
+    display: none;
+  }
+  input {
+    width: 100%;
+    padding: 15px 12px;
+    font-size: em(14);
+    line-height: em(20, 14);
+    color: #555;
+    border-bottom: 1px solid #302e2c;
+  }
+
+  .btn {
+    padding-left: 55px;
+    padding-right: 55px;
+    margin: 20px 0;
+    color: $branco;
+    &:hover {
+      background: $verde;
+      border-color: $verde;
+    }
+  }
+
+  p {
+    font-size: em(12);
+    line-height: em(17, 12);
+  }
+}
+

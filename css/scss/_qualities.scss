@@ -1,0 +1,41 @@
+.qualities {
+  @include section;
+  
+  .container {
+    @include d(s) {
+      @include flex-direction(column);
+    }
+  }
+
+  ul {
+    @include flexbox;
+  }
+}
+
+.quality-card {
+  flex: 1;
+  padding: 70px 40px;
+  margin-bottom: 20px;
+  border: 1px solid $cinza-8;
+  @include d(m) {
+    padding: 40px 15px;
+  }
+
+  span {
+    $circle-size: 60px;
+    background: $azul;
+    border-radius: 50%;
+    display: block;
+    width: $circle-size;
+    height: $circle-size;
+    line-height: $circle-size; //trick pro item sempre centralizar verticalmente
+    font-size: em(25);
+    color: $branco;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  h3 {
+    margin: 20px 0;
+  }
+}
